@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M14 2 26 8 14 14 2 8z' fill='%232563EB'/%3E%3Cpath d='M2 13.5 14 19.5 26 13.5' fill='none' stroke='%237C3AED' stroke-width='2.5'/%3E%3C/svg%3E">
+<title>Render Tools – Everyday Tools. Rendered Simple.</title>
+<meta name="description" content="Free online tools that run in your browser: image compressor, resizer, PDF merger, QR code generator, word counter and more.">
+<style>
+:root{--p:#2563EB;--a:#7C3AED;--bg:#fff;--bg2:#F3F4F6;--tx:#111827;--tx2:#4B5563;--bd:#E5E7EB;--ok:#047857;--er:#B91C1C;--bt:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0B1020;--bg2:#161C30;--tx:#F3F4F6;--tx2:#A8B0C0;--bd:#2A3350;--p:#6C9BFF;--a:#A78BFA;--ok:#34D399;--er:#F87171;--bt:#0B1020}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0B1020;--bg2:#161C30;--tx:#F3F4F6;--tx2:#A8B0C0;--bd:#2A3350;--p:#6C9BFF;--a:#A78BFA;--ok:#34D399;--er:#F87171;--bt:#0B1020}
+:root[data-theme="light"]{color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--p)}:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+header{border-bottom:1px solid var(--bd);position:sticky;top:0;background:var(--bg);z-index:5}
+.w{max-width:1040px;margin:0 auto;padding:0 16px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--tx);text-decoration:none}
+nav a{margin-left:14px;color:var(--tx);text-decoration:none;font-weight:500}nav a:hover{color:var(--p)}
+.hero{text-align:center;padding:48px 0 28px}
+h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15;margin:0 0 12px}
+.g{background:linear-gradient(90deg,var(--p),var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--tx2);max-width:560px;margin:0 auto 20px}
+input,select,textarea,button{font:inherit;color:var(--tx)}
+input[type=text],input[type=number],input[type=date],select,textarea{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:8px;background:var(--bg)}
+textarea{min-height:180px;resize:vertical}label{display:block;font-weight:600;margin:12px 0 4px;font-size:.92rem}
+.btn{display:inline-block;background:var(--p);color:var(--bt);border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer;min-height:44px;text-decoration:none}
+nav button{margin-left:14px}
+.btn.s{background:var(--bg2);color:var(--tx);border:1px solid var(--bd)}.btn:disabled{opacity:.5;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:20px 0}
+.card{display:block;border:1px solid var(--bd);border-radius:12px;padding:16px;text-decoration:none;color:var(--tx);background:var(--bg)}
+.card:hover,.card:focus-visible{border-color:var(--p);transform:translateY(-1px)}
+.card .ic{display:block;color:var(--p);margin-bottom:6px}.btn svg{width:16px;height:16px;vertical-align:-3px;margin-right:4px}
+.card b{display:block}.card span{color:var(--tx2);font-size:.9rem}.ic{font-size:1.5rem}
+.soon{opacity:.6;border-style:dashed}.tag{font-size:.72rem;background:var(--bg2);border-radius:99px;padding:2px 8px;margin-left:6px}
+.panel{background:var(--bg2);border-radius:12px;padding:18px;margin:16px 0}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.row>*{flex:1 1 140px}
+.res{font-size:1.25rem;font-weight:700;margin:12px 0;overflow-wrap:anywhere}
+.st{display:flex;gap:12px;flex-wrap:wrap}.st div{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:8px 14px;min-width:110px}.st b{display:block;font-size:1.3rem}
+.err{color:var(--er);font-weight:600}.ok{color:var(--ok);font-weight:600}
+.chips button{margin:0 6px 6px 0}.chips .on{background:var(--p);color:var(--bt)}
+.drop{border:2px dashed var(--bd);border-radius:12px;padding:24px;text-align:center;background:var(--bg)}.drop.o{border-color:var(--p)}
+img.pv,canvas.pv{max-width:100%;height:auto;border:1px solid var(--bd);border-radius:8px;background:#fff}
+ul.fl{list-style:none;padding:0}ul.fl li{display:flex;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid var(--bd)}ul.fl span{flex:1;overflow-wrap:anywhere}
+.crumb{font-size:.9rem;color:var(--tx2);margin-top:16px}.ad{min-height:0;display:none}
+footer{border-top:1px solid var(--bd);margin-top:40px;padding:24px 0;color:var(--tx2);font-size:.9rem}footer a{margin-right:14px}
+.sr{position:absolute;left:-9999px}a.sr:focus{left:8px;top:8px;z-index:20;background:var(--bg);color:var(--tx);padding:8px 12px;border:2px solid var(--p);border-radius:8px}
+.stg{position:relative;display:inline-block;max-width:100%;overflow:hidden;touch-action:none;user-select:none;margin:12px 0}.stg img{display:block;max-width:100%;height:auto}
+.cb{position:absolute;border:2px solid #fff;outline:2px solid var(--p);box-shadow:0 0 0 9999px rgba(0,0,0,.55);cursor:move;touch-action:none}.cb i{position:absolute;width:22px;height:22px;background:var(--p);border:2px solid #fff;border-radius:50%}
+.cb i[data-c=nw]{left:0;top:0;cursor:nwse-resize}.cb i[data-c=ne]{right:0;top:0;cursor:nesw-resize}.cb i[data-c=sw]{left:0;bottom:0;cursor:nesw-resize}.cb i[data-c=se]{right:0;bottom:0;cursor:nwse-resize}
+h1,h2,h3{color:var(--tx);text-wrap:balance}
+h1{font-weight:800;letter-spacing:-.025em;line-height:1.1}
+main>h1{font-size:clamp(1.9rem,4.5vw,2.6rem);margin:10px 0 8px}
+main>h1::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margin-top:14px;background:linear-gradient(90deg,var(--p),var(--a))}
+.hero h1{font-size:clamp(2.1rem,6vw,3.4rem);letter-spacing:-.03em}
+h2{font-size:1.45rem;font-weight:700;letter-spacing:-.015em;line-height:1.25;margin:2.2rem 0 .6rem}
+main>p,main>ul,main>ol,main>h2{max-width:72ch}
+main>p.sub{margin:0 0 16px;max-width:72ch}
+/* clean interface layer */
+body{line-height:1.65}main{padding-bottom:24px}
+.nav{min-height:64px}.nav nav{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+nav a{margin-left:0;padding:8px 12px;border-radius:8px}nav a:hover{background:var(--bg2);color:var(--tx)}nav button{margin-left:6px}
+.grid{gap:16px}
+.card{border-radius:14px;padding:20px}.card:hover,.card:focus-visible{transform:none;box-shadow:0 6px 18px rgba(17,24,39,.08)}.card .ic{margin-bottom:10px}.card b{margin-bottom:4px}
+.panel{border-radius:14px;padding:20px}
+#tool.panel{background:var(--bg);border:1px solid var(--bd);padding:24px}
+.panel .panel{background:var(--bg2);border:0;margin:14px 0}.panel .res{background:var(--bg);border-radius:10px;padding:10px 14px}.res:empty{display:none}
+.btn{border-radius:10px}.btn:hover{filter:brightness(1.07)}.btn.s:hover{border-color:var(--p);filter:none}
+input[type=text],input[type=number],input[type=date],select,textarea{border-radius:10px;min-height:44px}input:hover,select:hover,textarea:hover{border-color:var(--tx2)}input:focus,select:focus,textarea:focus{border-color:var(--p)}
+.st div{background:var(--bg2);border:0;border-radius:10px}.panel .st div{background:var(--bg)}
+.drop{background:var(--bg2);border-color:var(--bd);border-radius:14px}.drop.o{background:var(--bg)}
+ul.fl li{padding:10px 0}
+.hero{padding:56px 0 36px}.hero #q{display:block;margin:0 auto;padding:14px 18px;border-radius:12px;font-size:1.05rem}.hero .chips{margin-top:18px}
+.crumb{margin:20px 0 4px}
+main p a,main li a{text-underline-offset:3px}
+footer{margin-top:56px;padding:28px 0}footer p:first-child{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 12px}footer a{margin:0;color:var(--tx2);text-decoration:none}footer a:hover{color:var(--p);text-decoration:underline}
+.hello{display:inline-block;margin:0 0 16px;padding:4px 14px;border-radius:99px;background:var(--bg2);color:var(--tx2);font-size:.95rem;font-weight:600}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(prefers-reduced-motion:no-preference){.card{transition:.15s}}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<header><div class="w nav">
+<a class="logo" href="#home" aria-label="Render Tools home"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><path d="M14 2 26 8 14 14 2 8z" fill="url(#lg)"/><path d="M2 13.5 14 19.5 26 13.5" fill="none" stroke="url(#lg)" stroke-width="2.5"/><path d="M2 19 14 25 26 19" fill="none" stroke="url(#lg)" stroke-width="2.5" opacity=".6"/></svg>Render Tools</a>
+<nav aria-label="Main"><a href="#home">Home</a><a href="#tools">All Tools</a><a href="#guides">Guides</a><a href="#privacy">Privacy</a><a href="#about">About</a><button type="button" class="btn s" id="th"></button></nav>
+</div></header>
+<main id="main" class="w" tabindex="-1"></main>
+<footer><div class="w"><p><a href="#tools">All tools</a><a href="#guides">Guides</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms</a><a href="#cookies">Cookie policy</a><a href="#disclaimer">Disclaimer</a></p><p id="yr"></p></div></footer>
+<div id="live" class="sr" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script>
+const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
+const say=t=>{$('#live').textContent=t};
+const fmtB=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(2)+' MB';
+const clean=n=>Number(Number(n).toPrecision(10));
+const copy=async(t,b)=>{try{await navigator.clipboard.writeText(t);b.textContent='Copied';say('Copied')}catch{b.textContent='Copy failed'}};
+function dl(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);say('Download started')}
+function drop(el,accept,multi,cb){el.innerHTML=`<p><b>Drag files here</b> or</p><label class="btn s" style="display:inline-block;margin:0">Choose file${multi?'s':''}<input type="file" class="sr" accept="${accept}" ${multi?'multiple':''}></label>`;
+ const inp=$('input',el);inp.onchange=()=>{cb([...inp.files]);inp.value=''};
+ el.ondragover=e=>{e.preventDefault();el.classList.add('o')};el.ondragleave=()=>el.classList.remove('o');
+ el.ondrop=e=>{e.preventDefault();el.classList.remove('o');cb([...e.dataTransfer.files])}}
+const num=v=>v.trim()===''?NaN:Number(v);
+
+/* ---------- Tools ---------- */
+function wordCounter(el){
+ el.innerHTML=`<label for="t">Your text</label><textarea id="t" placeholder="Type or paste text here"></textarea>
+ <div class="st" style="margin:12px 0" role="status"></div>
+ <button class="btn s" id="cp">Copy</button> <button class="btn s" id="pa">Paste</button> <button class="btn s" id="cl">Clear</button>
+ <p class="sub" style="margin:12px 0 0;text-align:left">Reading time assumes 200 words per minute. Text stays in your browser.</p>`;
+ const t=$('#t',el),st=$('.st',el);
+ const up=()=>{const s=t.value,w=(s.trim().match(/\S+/g)||[]).length,p=s.split(/\n\s*\n/).filter(x=>x.trim()).length,c=[...s].length,ns=[...s.replace(/\s/g,'')].length,rt=w?Math.max(1,Math.ceil(w/200)):0;
+  st.innerHTML=[['Words',w],['Characters',c],['No spaces',ns],['Paragraphs',p],['Reading time',rt+' min']].map(([k,v])=>`<div>${k}<b>${v}</b></div>`).join('')};
+ t.oninput=up;up();
+ $('#cp',el).onclick=e=>copy(t.value,e.target);$('#cl',el).onclick=()=>{t.value='';up();t.focus()};
+ $('#pa',el).onclick=async()=>{try{t.value=await navigator.clipboard.readText();up()}catch{say('Paste blocked. Use Ctrl+V in the box.')}}}
+function caseConverter(el){
+ const T={upper:s=>s.toUpperCase(),lower:s=>s.toLowerCase(),title:s=>s.toLowerCase().replace(/(^|[\s\-(“"])(\p{L})/gu,(m,a,b)=>a+b.toUpperCase()),
+  sentence:s=>s.toLowerCase().replace(/(^\s*|[.!?]\s+)(\p{L})/gu,(m,a,b)=>a+b.toUpperCase()),
+  alt:s=>{let i=0;return [...s].map(c=>/\p{L}/u.test(c)?(i++%2?c.toUpperCase():c.toLowerCase()):c).join('')}};
+ el.innerHTML=`<label for="t">Your text</label><textarea id="t"></textarea><div class="chips" style="margin-top:12px">
+ ${Object.entries({upper:'UPPERCASE',lower:'lowercase',title:'Title Case',sentence:'Sentence case',alt:'aLtErNaTiNg'}).map(([k,v])=>`<button class="btn s" data-k="${k}">${v}</button>`).join('')}</div>
+ <button class="btn s" id="cp">Copy</button> <button class="btn s" id="cl">Clear</button>
+ <p class="sub" style="text-align:left">Case rules follow Unicode. Some languages (e.g. Turkish dotted i, German ß) have special cases that may not convert as a native speaker expects. Punctuation is never changed.</p>`;
+ const t=$('#t',el);$$('[data-k]',el).forEach(b=>b.onclick=()=>{t.value=T[b.dataset.k](t.value);say('Converted')});
+ $('#cp',el).onclick=e=>copy(t.value,e.target);$('#cl',el).onclick=()=>{t.value='';t.focus()}}
+function pctCalc(el){
+ el.innerHTML=`<div class="panel"><b>What is X% of Y?</b><div class="row"><div><label for="a1">X (%)</label><input id="a1" type="number" step="any"></div><div><label for="b1">Y</label><input id="b1" type="number" step="any"></div></div><p class="res" id="r1" aria-live="polite"></p></div>
+ <div class="panel"><b>X is what percent of Y?</b><div class="row"><div><label for="a2">X</label><input id="a2" type="number" step="any"></div><div><label for="b2">Y</label><input id="b2" type="number" step="any"></div></div><p class="res" id="r2" aria-live="polite"></p></div>
+ <div class="panel"><b>Percentage change</b><div class="row"><div><label for="a3">From</label><input id="a3" type="number" step="any"></div><div><label for="b3">To</label><input id="b3" type="number" step="any"></div></div><p class="res" id="r3" aria-live="polite"></p></div>`;
+ const f=n=>String(clean(+n.toFixed(6)));
+ const calc=(i,fn)=>{const a=num($('#a'+i,el).value),b=num($('#b'+i,el).value),r=$('#r'+i,el);r.className='res';
+  if(isNaN(a)||isNaN(b)){r.textContent='Enter both numbers.';r.style.fontWeight=400;return}r.style.fontWeight='';
+  const o=fn(a,b);if(o.e){r.textContent=o.e;r.className='res err'}else r.textContent=o.t};
+ [1,2,3].forEach(i=>['a','b'].forEach(k=>$('#'+k+i,el).oninput=()=>calc(i,[
+  (a,b)=>({t:`${a}% × ${b} ÷ 100 = ${f(a*b/100)}`}),
+  (a,b)=>b===0?{e:'Y cannot be zero (division by zero).'}:{t:`${a} ÷ ${b} × 100 = ${f(a/b*100)}%`},
+  (a,b)=>a===0?{e:'Percentage change from 0 is undefined.'}:{t:`(${b} − ${a}) ÷ |${a}| × 100 = ${f((b-a)/Math.abs(a)*100)}%`}][i-1])))}
+function ageCalc(el){
+ const today=new Date(),iso=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+ el.innerHTML=`<div class="row"><div><label for="dob">Date of birth</label><input id="dob" type="date" max="${iso}"></div><div><label for="ref">Reference date (optional)</label><input id="ref" type="date" value="${iso}"></div></div>
+ <p><button class="btn" id="go">Calculate age</button></p><p class="res" id="out" aria-live="polite"></p>`;
+ $('#go',el).onclick=()=>{const o=$('#out',el);o.className='res';const d=$('#dob',el).value,r=$('#ref',el).value||iso;
+  if(!d){o.textContent='Please enter a date of birth.';o.className='res err';return}
+  const [by,bm,bd]=d.split('-').map(Number),[ry,rm,rd]=r.split('-').map(Number);
+  if(d>r){o.textContent='Date of birth cannot be after the reference date.';o.className='res err';return}
+  let y=ry-by,m=rm-bm,dd=rd-bd;if(dd<0){m--;dd+=new Date(ry,rm-1,0).getDate()}if(m<0){y--;m+=12}
+  const days=Math.round((Date.UTC(ry,rm-1,rd)-Date.UTC(by,bm-1,bd))/864e5);
+  o.textContent=`${y} years, ${m} months, ${dd} days (${days.toLocaleString()} days in total)`}}
+const U={Length:{base:'m',u:{mm:.001,cm:.01,m:1,km:1000,inch:.0254,foot:.3048,yard:.9144,mile:1609.344}},
+ Mass:{u:{g:.001,kg:1,tonne:1000,ounce:.028349523125,pound:.45359237}},
+ Area:{u:{'cm²':1e-4,'m²':1,'km²':1e6,hectare:1e4,'ft²':.09290304,acre:4046.8564224}},
+ Volume:{u:{mL:.001,litre:1,'m³':1000,'US gallon':3.785411784,'US cup':.2365882365,'US fl oz':.0295735295625}},
+ Time:{u:{second:1,minute:60,hour:3600,day:86400,week:604800}},
+ Speed:{u:{'m/s':1,'km/h':1/3.6,mph:.44704,knot:1852/3600}},
+ Temperature:{t:1,u:{'°C':1,'°F':1,K:1}}};
+function unitConv(el){
+ el.innerHTML=`<div class="row"><div><label for="cat">Category</label><select id="cat">${Object.keys(U).map(k=>`<option>${k}</option>`).join('')}</select></div></div>
+ <div class="row"><div><label for="v">Value</label><input id="v" type="number" step="any" value="1"></div><div><label for="f">From</label><select id="f"></select></div><div><label for="to">To</label><select id="to"></select></div></div><p class="res" id="out" aria-live="polite"></p>`;
+ const cat=$('#cat',el),f=$('#f',el),to=$('#to',el),v=$('#v',el),out=$('#out',el);
+ const fill=()=>{const k=Object.keys(U[cat.value].u).map(x=>`<option>${x}</option>`).join('');f.innerHTML=to.innerHTML=k;to.selectedIndex=1;run()};
+ const toC=(x,u)=>u==='°C'?x:u==='°F'?(x-32)*5/9:x-273.15,fromC=(c,u)=>u==='°C'?c:u==='°F'?c*9/5+32:c+273.15;
+ function run(){const x=num(v.value);out.className='res';if(isNaN(x)){out.textContent='Enter a valid number.';out.className='res err';return}
+  const c=U[cat.value];let r;
+  if(c.t){const k=toC(x,f.value);if(k<-273.15-1e-9){out.textContent='Below absolute zero.';out.className='res err';return}r=fromC(k,to.value)}else r=x*c.u[f.value]/c.u[to.value];
+  out.textContent=`${x} ${f.value} = ${clean(r)} ${to.value}`}
+ cat.onchange=fill;[v,f,to].forEach(e=>e.oninput=run);fill()}
+
+/* image tools */
+const IMG_OK=['image/jpeg','image/png','image/webp'],IMG_MAX=25*1048576,PX_MAX=40e6;
+function imgTool(el,mode){
+ const rs=mode==='resize';
+ el.innerHTML=`<div class="drop" id="dz"></div><div id="ws" hidden>
+ <p id="info" role="status"></p><div class="row">
+ ${rs?`<div><label for="w">Width (px)</label><input id="w" type="number" min="1"></div><div><label for="h">Height (px)</label><input id="h" type="number" min="1"></div><div><label for="lk">Aspect ratio</label><select id="lk"><option value="1">Locked</option><option value="0">Unlocked</option></select></div>`:`<div><label for="q">Quality: <span id="qv">75</span>%</label><input id="q" type="range" min="10" max="100" value="75"></div>`}
+ <div><label for="fm">Output format</label><select id="fm"><option value="image/jpeg">JPEG</option><option value="image/webp">WebP</option><option value="image/png">PNG (lossless)</option></select></div></div>
+ <p><button class="btn" id="go">${rs?'Resize':'Compress'}</button></p><p id="msg" aria-live="polite"></p><div id="rs" hidden><img class="pv" id="pv" alt="Result preview"><p id="ri"></p><button class="btn" id="dlb">Download</button></div></div>`;
+ let img,file,blob;const msg=$('#msg',el);
+ const err=t=>{msg.textContent=t;msg.className='err';say(t)};
+ drop($('#dz',el),IMG_OK.join(','),false,async fs=>{const f=fs[0];if(!f)return;msg.textContent='';$('#rs',el).hidden=true;
+  if(!IMG_OK.includes(f.type)){$('#ws',el).hidden=false;return err('Unsupported format. Use JPEG, PNG or WebP.')}
+  if(f.size>IMG_MAX)return err('File is larger than 25 MB.');
+  const u=URL.createObjectURL(f),i=new Image();i.onload=()=>{URL.revokeObjectURL(u);if(i.naturalWidth*i.naturalHeight>PX_MAX)return err('Image is too large to process safely.');
+   img=i;file=f;$('#ws',el).hidden=false;$('#info',el).textContent=`${f.name} · ${i.naturalWidth}×${i.naturalHeight}px · ${fmtB(f.size)}`;
+   if(rs){$('#w',el).value=i.naturalWidth;$('#h',el).value=i.naturalHeight}$('#fm',el).value=f.type==='image/png'?'image/png':'image/jpeg'};
+  i.onerror=()=>{URL.revokeObjectURL(u);err('This file could not be read. It may be corrupt.')};i.src=u});
+ if(rs){const w=$('#w',el),h=$('#h',el);w.oninput=()=>{if(img&&$('#lk',el).value==='1'&&+w.value>0)h.value=Math.round(w.value*img.naturalHeight/img.naturalWidth)};
+  h.oninput=()=>{if(img&&$('#lk',el).value==='1'&&+h.value>0)w.value=Math.round(h.value*img.naturalWidth/img.naturalHeight)}}
+ else $('#q',el).oninput=e=>$('#qv',el).textContent=e.target.value;
+ $('#go',el).onclick=()=>{if(!img)return err('Choose an image first.');msg.className='';msg.textContent='Processing…';
+  let W=img.naturalWidth,H=img.naturalHeight;
+  if(rs){W=Math.round(+$('#w',el).value);H=Math.round(+$('#h',el).value);if(!(W>0&&H>0))return err('Enter valid width and height.');if(W>8000||H>8000||W*H>PX_MAX)return err('Maximum output is 8000 px per side.')}
+  const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d'),fm=$('#fm',el).value;
+  if(fm==='image/jpeg'){x.fillStyle='#fff';x.fillRect(0,0,W,H)}x.drawImage(img,0,0,W,H);
+  c.toBlob(b=>{if(!b)return err('Your browser could not encode this format.');blob=b;const pv=$('#pv',el);if(pv.src)URL.revokeObjectURL(pv.src);pv.src=URL.createObjectURL(b);
+   const d=Math.round((1-b.size/file.size)*100);
+   $('#ri',el).textContent=`${W}×${H}px · ${fmtB(b.size)}`+(rs?'':(d>=0?` · ${d}% smaller`:` · ${-d}% larger (try lower quality or another format)`));
+   $('#rs',el).hidden=false;msg.textContent='Done.';msg.className='ok';say('Image ready')},fm,rs?.92:+$('#q',el).value/100)};
+ $('#dlb',el).onclick=()=>{const e={'image/jpeg':'jpg','image/webp':'webp','image/png':'png'}[blob.type];dl(blob,file.name.replace(/\.[^.]+$/,'')+(rs?'-resized.':'-compressed.')+e)}}
+
+/* QR */
+function qrTool(el){
+ el.innerHTML=`<div class="row"><div><label for="ty">Type</label><select id="ty"><option value="text">Text</option><option value="url">URL</option><option value="email">Email address</option><option value="wifi">Wi-Fi network</option><option value="contact">Contact (vCard)</option></select></div></div>
+ <div id="g1"><label for="in">Content</label><input id="in" type="text" maxlength="1000" autocomplete="off"></div>
+ <div id="wf" hidden><div class="row"><div><label for="wn">Network name (SSID)</label><input id="wn" type="text" maxlength="32" autocomplete="off"></div><div><label for="sc">Security</label><select id="sc"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">None (open network)</option></select></div></div><label for="pw">Password</label><input id="pw" type="text" maxlength="63" autocomplete="off"><label><input id="hd" type="checkbox" style="width:auto"> Hidden network</label></div>
+ <div id="ct" hidden><div class="row"><div><label for="cn">Full name</label><input id="cn" type="text" maxlength="100" autocomplete="off"></div><div><label for="co">Organization (optional)</label><input id="co" type="text" maxlength="100" autocomplete="off"></div></div><div class="row"><div><label for="cp">Phone</label><input id="cp" type="text" maxlength="25" autocomplete="off" placeholder="+233 20 000 0000"></div><div><label for="ce">Email</label><input id="ce" type="text" maxlength="100" autocomplete="off"></div></div><label for="cu">Website (optional)</label><input id="cu" type="text" maxlength="200" autocomplete="off" placeholder="https://"></div>
+ <div class="row"><div><label for="fg">Foreground</label><input id="fg" type="color" value="#111827"></div><div><label for="bg">Background</label><input id="bg" type="color" value="#ffffff"></div></div>
+ <p id="msg" aria-live="polite"></p><canvas id="cv" class="pv" width="1" height="1" aria-label="QR code preview" hidden></canvas>
+ <p><button class="btn" id="png" disabled>Download PNG</button> <button class="btn s" id="svg" disabled>Download SVG</button></p>
+ <p class="sub" style="text-align:left">Always scan the code with your phone before printing or sharing it. A 4-module quiet zone is included. Anyone who scans a Wi-Fi code can read the password, and contact codes show everything you enter, so share them with care.</p>`;
+ const lum=h=>{const c=[1,3,5].map(i=>{const v=parseInt(h.substr(i,2),16)/255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4});return .2126*c[0]+.7152*c[1]+.0722*c[2]};
+ let qr=null;const msg=$('#msg',el),cv=$('#cv',el);
+ function run(){const ty=$('#ty',el).value;$('#g1',el).hidden=ty==='wifi'||ty==='contact';$('#wf',el).hidden=ty!=='wifi';$('#ct',el).hidden=ty!=='contact';let v=$('#in',el).value.trim();msg.className='';qr=null;cv.hidden=true;$('#png',el).disabled=$('#svg',el).disabled=true;
+  const bad=t=>{msg.textContent=t;msg.className='err'};
+  if(ty==='wifi'){const s=$('#wn',el).value.trim(),sec=$('#sc',el).value,pw=$('#pw',el).value,e=x=>x.replace(/([\\;,:"])/g,'\\$1');
+   if(!s){msg.textContent='Enter the network name (SSID).';return}
+   if(sec!=='nopass'){if(!pw){msg.textContent='Enter the network password.';return}if(sec==='WPA'&&(pw.length<8||pw.length>63))return bad('WPA passwords must be 8 to 63 characters.')}
+   v='WIFI:T:'+sec+';S:'+e(s)+';'+(sec==='nopass'?'':'P:'+e(pw)+';')+($('#hd',el).checked?'H:true;':'')+';'}
+  if(ty==='contact'){const nm=$('#cn',el).value.trim(),ph=$('#cp',el).value.trim(),em=$('#ce',el).value.trim(),og=$('#co',el).value.trim(),ur=$('#cu',el).value.trim(),e=x=>x.replace(/([\\;,])/g,'\\$1').replace(/\n/g,' ');
+   if(!nm){msg.textContent='Enter a name.';return}
+   if(!ph&&!em&&!ur)return bad('Add at least a phone number, email or website.');
+   if(ph&&!/^[+\d\s().-]{5,25}$/.test(ph))return bad('Enter a valid phone number.');
+   if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))return bad('Enter a valid email address.');
+   if(ur){try{if(!/^https?:$/.test(new URL(ur).protocol))throw 0}catch{return bad('Website must start with http:// or https://')}}
+   const p=nm.split(/\s+/);v=['BEGIN:VCARD','VERSION:3.0','N:'+e(p.length>1?p.pop():'')+';'+e(p.join(' '))+';;;','FN:'+e(nm),og&&'ORG:'+e(og),ph&&'TEL:'+ph,em&&'EMAIL:'+em,ur&&'URL:'+ur,'END:VCARD'].filter(Boolean).join('\n')}
+  if(!v){msg.textContent='Enter content to generate a code.';return}
+  if(ty==='url'){try{const u=new URL(v);if(!/^https?:$/.test(u.protocol))throw 0}catch{msg.textContent='Enter a full URL starting with http:// or https://';msg.className='err';return}}
+  if(ty==='email'){if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){msg.textContent='Enter a valid email address.';msg.className='err';return}v='mailto:'+v}
+  const fg=$('#fg',el).value,bg=$('#bg',el).value,L=[lum(fg),lum(bg)].sort((a,b)=>b-a),cr=(L[0]+.05)/(L[1]+.05);
+  if(cr<4||lum(fg)>lum(bg)){msg.textContent='Use a dark foreground on a lighter background with strong contrast so the code scans.';msg.className='err';return}
+  try{qr=qrcode(0,'M');qr.addData(v);qr.make()}catch{msg.textContent='Content is too long for a QR code.';msg.className='err';qr=null;return}
+  const n=qr.getModuleCount(),s=8,q=4,S=(n+2*q)*s;cv.width=cv.height=S;const x=cv.getContext('2d');x.fillStyle=bg;x.fillRect(0,0,S,S);x.fillStyle=fg;
+  for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(qr.isDark(r,c))x.fillRect((c+q)*s,(r+q)*s,s,s);
+  cv.style.width=Math.min(S,320)+'px';cv.hidden=false;$('#png',el).disabled=$('#svg',el).disabled=false;msg.textContent='QR code ready.';msg.className='ok'}
+ el.oninput=run;
+ $('#png',el).onclick=()=>cv.toBlob(b=>dl(b,'qr-code.png'));
+ $('#svg',el).onclick=()=>{const n=qr.getModuleCount(),q=4,S=n+2*q,fg=$('#fg',el).value,bg=$('#bg',el).value;let p='';
+  for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(qr.isDark(r,c))p+=`M${c+q} ${r+q}h1v1h-1z`;
+  dl(new Blob([`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${S} ${S}" shape-rendering="crispEdges"><rect width="${S}" height="${S}" fill="${bg}"/><path d="${p}" fill="${fg}"/></svg>`],{type:'image/svg+xml'}),'qr-code.svg')}}
+
+/* PDF merger */
+function pdfMerge(el){
+ el.innerHTML=`<div class="drop" id="dz"></div><ul class="fl" id="fl"></ul><p id="msg" aria-live="polite"></p><button class="btn" id="go" disabled>Merge PDFs</button>
+ <p class="sub" style="text-align:left">Files are merged on your device and never uploaded. Limits: 20 files, 25 MB each. Password-protected PDFs are not supported.</p>`;
+ let L=[];const msg=$('#msg',el);
+ const draw=()=>{const ul=$('#fl',el);ul.innerHTML='';L.forEach((f,i)=>{const li=document.createElement('li'),s=document.createElement('span');s.textContent=`${i+1}. ${f.name} (${fmtB(f.size)})`;li.append(s);
+  [['Up','Move up',-1],['Down','Move down',1],['Remove','Remove',0]].forEach(([t,a,d])=>{const b=document.createElement('button');b.className='btn s';b.textContent=t;b.setAttribute('aria-label',a+' '+f.name);
+   b.onclick=()=>{if(!d)L.splice(i,1);else if(L[i+d])[L[i],L[i+d]]=[L[i+d],L[i]];draw()};li.append(b)});ul.append(li)});$('#go',el).disabled=L.length<2};
+ drop($('#dz',el),'application/pdf',true,fs=>{msg.textContent='';msg.className='';for(const f of fs){if(f.type!=='application/pdf'&&!/\.pdf$/i.test(f.name)){msg.textContent=f.name+' is not a PDF.';msg.className='err';continue}
+  if(f.size>25*1048576){msg.textContent=f.name+' exceeds 25 MB.';msg.className='err';continue}if(L.length>=20){msg.textContent='Maximum 20 files.';msg.className='err';break}L.push(f)}draw()});
+ $('#go',el).onclick=async()=>{msg.className='';msg.textContent='Merging…';try{if(!window.PDFLib)throw new Error('lib');const out=await PDFLib.PDFDocument.create();
+  for(const f of L){let d;try{d=await PDFLib.PDFDocument.load(await f.arrayBuffer())}catch{throw new Error('Could not read '+f.name+'. It may be encrypted or damaged.')}
+   (await out.copyPages(d,d.getPageIndices())).forEach(p=>out.addPage(p))}
+  dl(new Blob([await out.save()],{type:'application/pdf'}),'merged.pdf');msg.textContent='Merged PDF downloaded.';msg.className='ok'}
+  catch(e){msg.textContent=e.message==='lib'?'PDF library failed to load. Check your connection.':e.message;msg.className='err'}}}
+
+function loadImg(f){return new Promise((ok,no)=>{const u=URL.createObjectURL(f),i=new Image();i.onload=()=>{URL.revokeObjectURL(u);ok(i)};i.onerror=()=>{URL.revokeObjectURL(u);no(new Error('Could not read '+f.name+'. It may be corrupt.'))};i.src=u})}
+function flist(ul,L,cb){ul.innerHTML='';L.forEach((f,i)=>{const li=document.createElement('li'),s=document.createElement('span');s.textContent=`${i+1}. ${f.name} (${fmtB(f.size)})`;li.append(s);
+ [['Up','Move up',-1],['Down','Move down',1],['Remove','Remove',0]].forEach(([t,a,d])=>{const b=document.createElement('button');b.className='btn s';b.textContent=t;b.setAttribute('aria-label',a+' '+f.name);
+  b.onclick=()=>{if(!d)L.splice(i,1);else if(L[i+d])[L[i],L[i+d]]=[L[i+d],L[i]];flist(ul,L,cb);cb()};li.append(b)});ul.append(li)})}
+
+/* Image cropper */
+function imgCrop(el){
+ el.innerHTML=`<div class="drop" id="dz"></div><div id="ws" hidden><p id="info" role="status"></p>
+ <div class="row"><div><label for="ar">Aspect ratio</label><select id="ar"><option value="0">Freeform</option><option value="1">1:1 (square)</option><option value="1.3333333">4:3</option><option value="1.5">3:2</option><option value="1.7777778">16:9</option><option value="0.75">3:4</option><option value="0.5625">9:16</option></select></div>
+ <div><label for="fm">Output format</label><select id="fm"><option value="image/png">PNG</option><option value="image/jpeg">JPEG</option><option value="image/webp">WebP</option></select></div></div>
+ <div class="stg"><img id="im" alt="Image being cropped" draggable="false"><div class="cb" id="cb" tabindex="0" role="group" aria-label="Crop area. Arrow keys move it. Shift plus arrow keys resize it."><i data-c="nw"></i><i data-c="ne"></i><i data-c="sw"></i><i data-c="se"></i></div></div>
+ <p id="cinfo" role="status"></p><p><button class="btn" id="go">Crop image</button></p>
+ <div id="rs" hidden><img class="pv" id="pv" alt="Cropped result"><p id="ri"></p><button class="btn" id="dlb">Download</button></div></div><p id="msg" aria-live="polite"></p>`;
+ const im=$('#im',el),cb=$('#cb',el),ar=$('#ar',el),msg=$('#msg',el);let file=null,cur=null,blob=null,ready=false,W=0,H=0,R={x:0,y:0,w:0,h:0},drag=null;
+ const err=t=>{msg.textContent=t;msg.className='err';say(t)};
+ const draw=()=>{Object.assign(cb.style,{left:R.x+'px',top:R.y+'px',width:R.w+'px',height:R.h+'px'});const k=im.naturalWidth/W;$('#cinfo',el).textContent=`Selection: ${Math.round(R.w*k)} × ${Math.round(R.h*k)} px`};
+ const clamp=(v,a,b)=>Math.min(Math.max(v,a),b);
+ drop($('#dz',el),IMG_OK.join(','),false,fs=>{const f=fs[0];if(!f)return;msg.textContent='';
+  if(!IMG_OK.includes(f.type))return err('Unsupported format. Use JPEG, PNG or WebP.');
+  if(f.size>IMG_MAX)return err('File is larger than 25 MB.');
+  if(im.src.startsWith('blob:'))URL.revokeObjectURL(im.src);cur=f;im.src=URL.createObjectURL(f)});
+ im.onload=()=>{if(im.naturalWidth*im.naturalHeight>PX_MAX){ready=false;return err('Image is too large to process safely.')}
+  file=cur;ready=true;$('#ws',el).hidden=false;$('#rs',el).hidden=true;$('#info',el).textContent=`${file.name} · ${im.naturalWidth}×${im.naturalHeight}px · ${fmtB(file.size)}`;
+  ar.value='0';$('#fm',el).value=file.type==='image/png'?'image/png':'image/jpeg';W=im.clientWidth;H=im.clientHeight;R={x:W*.1,y:H*.1,w:W*.8,h:H*.8};draw();say('Image loaded. Adjust the crop area.')};
+ im.onerror=()=>{ready=false;err('This file could not be read. It may be corrupt.')};
+ new ResizeObserver(()=>{if(!ready||!im.clientWidth||im.clientWidth===W)return;const k=im.clientWidth/W;R={x:R.x*k,y:R.y*k,w:R.w*k,h:R.h*k};W=im.clientWidth;H=im.clientHeight;draw()}).observe(im);
+ ar.onchange=()=>{const r=+ar.value;if(!r||!ready)return;let w=Math.min(R.w,W),h=w/r;if(h>H){h=H;w=h*r}R.w=w;R.h=h;R.x=clamp(R.x,0,W-w);R.y=clamp(R.y,0,H-h);draw()};
+ cb.onpointerdown=e=>{drag={c:e.target.dataset.c||'',sx:e.clientX,sy:e.clientY,o:{...R}};cb.setPointerCapture(e.pointerId);e.preventDefault()};
+ cb.onpointermove=e=>{if(!drag)return;const d=drag,o=d.o;
+  if(!d.c){R.x=clamp(o.x+e.clientX-d.sx,0,W-R.w);R.y=clamp(o.y+e.clientY-d.sy,0,H-R.h)}
+  else{const fx=d.c.includes('w')?o.x+o.w:o.x,fy=d.c.includes('n')?o.y+o.h:o.y,b=im.getBoundingClientRect(),px=clamp(e.clientX-b.left,0,W),py=clamp(e.clientY-b.top,0,H),
+    sx=px>=fx?1:-1,sy=py>=fy?1:-1,mw=sx>0?W-fx:fx,mh=sy>0?H-fy:fy,r=+ar.value;let w=Math.min(Math.max(24,Math.abs(px-fx)),mw),h;
+   if(r){h=w/r;if(h>mh){h=mh;w=h*r}}else h=Math.min(Math.max(24,Math.abs(py-fy)),mh);
+   R={x:sx>0?fx:fx-w,y:sy>0?fy:fy-h,w,h}}
+  draw()};
+ cb.onpointerup=cb.onpointercancel=()=>{drag=null};
+ cb.onkeydown=e=>{const k={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];if(!k||!ready)return;e.preventDefault();const r=+ar.value;
+  if(e.shiftKey){let w=R.w+(k[0]||k[1])*10,h=r?w/r:R.h+(k[1]||k[0])*10;w=clamp(w,24,W-R.x);h=clamp(h,24,H-R.y);if(r){h=Math.min(h,w/r);w=h*r}R.w=w;R.h=h}
+  else{R.x=clamp(R.x+k[0]*10,0,W-R.w);R.y=clamp(R.y+k[1]*10,0,H-R.h)}draw()};
+ $('#go',el).onclick=()=>{if(!ready)return err('Choose an image first.');msg.textContent='';const k=im.naturalWidth/W,nw=im.naturalWidth,nh=im.naturalHeight;
+  const sx=clamp(Math.round(R.x*k),0,nw-1),sy=clamp(Math.round(R.y*k),0,nh-1),sw=clamp(Math.round(R.w*k),1,nw-sx),sh=clamp(Math.round(R.h*k),1,nh-sy);
+  const c=document.createElement('canvas');c.width=sw;c.height=sh;const x=c.getContext('2d'),fm=$('#fm',el).value;if(fm==='image/jpeg'){x.fillStyle='#fff';x.fillRect(0,0,sw,sh)}x.drawImage(im,sx,sy,sw,sh,0,0,sw,sh);
+  c.toBlob(b=>{if(!b)return err('Your browser could not encode this format.');blob=b;const pv=$('#pv',el);if(pv.src.startsWith('blob:'))URL.revokeObjectURL(pv.src);pv.src=URL.createObjectURL(b);
+   $('#ri',el).textContent=`${sw}×${sh}px · ${fmtB(b.size)}`;$('#rs',el).hidden=false;msg.textContent='Done.';msg.className='ok';say('Cropped image ready')},fm,.92)};
+ $('#dlb',el).onclick=()=>{const e={'image/jpeg':'jpg','image/webp':'webp','image/png':'png'}[blob.type];dl(blob,file.name.replace(/\.[^.]+$/,'')+'-cropped.'+e)}}
+
+/* Images to PDF */
+function imgToPdf(el){
+ el.innerHTML=`<div class="drop" id="dz"></div><ul class="fl" id="fl"></ul>
+ <div class="row"><div><label for="ps">Page size</label><select id="ps"><option value="a4">A4</option><option value="letter">US Letter</option><option value="img">Same as image</option></select></div>
+ <div><label for="or">Orientation</label><select id="or"><option value="auto">Match each image</option><option value="p">Portrait</option><option value="l">Landscape</option></select></div>
+ <div><label for="mg">Margin</label><select id="mg"><option value="0">None</option><option value="24" selected>Small</option><option value="48">Large</option></select></div></div>
+ <p id="msg" aria-live="polite"></p><button class="btn" id="go" disabled>Create PDF</button>
+ <p class="sub" style="text-align:left">Images are converted on your device and never uploaded. Each image is scaled to fit its page without stretching. Limits: 30 images, 25 MB each.</p>`;
+ const L=[],msg=$('#msg',el),go=$('#go',el),sync=()=>{go.disabled=!L.length};
+ drop($('#dz',el),IMG_OK.join(','),true,fs=>{msg.textContent='';msg.className='';for(const f of fs){if(!IMG_OK.includes(f.type)){msg.textContent=f.name+' is not a JPEG, PNG or WebP image.';msg.className='err';continue}
+  if(f.size>IMG_MAX){msg.textContent=f.name+' exceeds 25 MB.';msg.className='err';continue}if(L.length>=30){msg.textContent='Maximum 30 images.';msg.className='err';break}L.push(f)}flist($('#fl',el),L,sync);sync()});
+ go.onclick=async()=>{msg.className='';msg.textContent='Creating PDF…';go.disabled=true;
+  try{if(!window.PDFLib)throw new Error('lib');const doc=await PDFLib.PDFDocument.create(),ps=$('#ps',el).value,o=$('#or',el).value,m=+$('#mg',el).value;let px=0;
+   for(const f of L){const i=await loadImg(f),nw=i.naturalWidth,nh=i.naturalHeight;px+=nw*nh;if(nw*nh>PX_MAX||px>2e8)throw new Error('The images are too large to process safely. Remove some and try again.');
+    const png=f.type==='image/png',c=document.createElement('canvas');c.width=nw;c.height=nh;const x=c.getContext('2d');if(!png){x.fillStyle='#fff';x.fillRect(0,0,nw,nh)}x.drawImage(i,0,0);
+    const b=await new Promise(r=>c.toBlob(r,png?'image/png':'image/jpeg',.92));c.width=c.height=0;if(!b)throw new Error('Could not process '+f.name+'.');
+    const bytes=new Uint8Array(await b.arrayBuffer()),em=png?await doc.embedPng(bytes):await doc.embedJpg(bytes);let pw,ph;
+    if(ps==='img'){pw=nw*.75+2*m;ph=nh*.75+2*m;if(Math.max(pw,ph)>14400)throw new Error(f.name+' is too large for \u201cSame as image\u201d. Choose A4 or Letter.')}
+    else{[pw,ph]=ps==='a4'?[595.28,841.89]:[612,792];if(o==='l'||(o==='auto'&&nw>nh))[pw,ph]=[ph,pw]}
+    const s=Math.min((pw-2*m)/nw,(ph-2*m)/nh),w=nw*s,h=nh*s;doc.addPage([pw,ph]).drawImage(em,{x:(pw-w)/2,y:(ph-h)/2,width:w,height:h})}
+   dl(new Blob([await doc.save()],{type:'application/pdf'}),'images.pdf');msg.textContent=`PDF with ${L.length} page${L.length>1?'s':''} downloaded.`;msg.className='ok'}
+  catch(e){msg.textContent=e.message==='lib'?'PDF library failed to load. Check your connection.':e.message;msg.className='err'}
+  go.disabled=!L.length}}
+
+/* PDF splitter */
+function parseRanges(s,n){const out=[];if(!s.trim())throw new Error('Enter the pages to extract, for example 1-3, 5.');
+ for(const t of s.split(',')){const m=t.trim().match(/^(\d+)(?:\s*-\s*(\d+))?$/);if(!m)throw new Error('\u201c'+t.trim()+'\u201d is not a valid page or range.');
+  const a=+m[1],b=m[2]?+m[2]:a;if(a<1||b>n||a>b)throw new Error('Pages must be between 1 and '+n+', with the start before the end ('+t.trim()+').');
+  for(let p=a;p<=b;p++)if(!out.includes(p-1))out.push(p-1)}return out}
+function pdfSplit(el){
+ el.innerHTML=`<div class="drop" id="dz"></div><div id="ws" hidden><p id="info" role="status"></p><label for="rg">Pages to extract</label><input id="rg" type="text" placeholder="e.g. 1-3, 5, 8-10" autocomplete="off"><p><button class="btn" id="go">Extract pages</button></p></div><p id="msg" aria-live="polite"></p>
+ <p class="sub" style="text-align:left">Your PDF is processed on your device and never uploaded. Limit: 25 MB. Password-protected PDFs are not supported. Pages are exported in the order you list them.</p>`;
+ let src=null,name='';const msg=$('#msg',el);
+ drop($('#dz',el),'application/pdf',false,async fs=>{const f=fs[0];if(!f)return;msg.textContent='';msg.className='';src=null;$('#ws',el).hidden=true;
+  if(f.type!=='application/pdf'&&!/\.pdf$/i.test(f.name)){msg.textContent=f.name+' is not a PDF.';msg.className='err';return}
+  if(f.size>25*1048576){msg.textContent='File is larger than 25 MB.';msg.className='err';return}
+  try{if(!window.PDFLib)throw new Error('lib');src=await PDFLib.PDFDocument.load(await f.arrayBuffer());name=f.name.replace(/\.pdf$/i,'');
+   $('#info',el).textContent=`${f.name} · ${src.getPageCount()} pages · ${fmtB(f.size)}`;$('#ws',el).hidden=false;say('PDF loaded')}
+  catch(e){src=null;msg.textContent=e.message==='lib'?'PDF library failed to load. Check your connection.':'This PDF could not be read. It may be encrypted or damaged.';msg.className='err'}});
+ $('#go',el).onclick=async()=>{if(!src)return;msg.className='';
+  try{const idx=parseRanges($('#rg',el).value,src.getPageCount());msg.textContent='Extracting…';const out=await PDFLib.PDFDocument.create();(await out.copyPages(src,idx)).forEach(p=>out.addPage(p));
+   dl(new Blob([await out.save()],{type:'application/pdf'}),name+'-pages.pdf');msg.textContent=`Extracted ${idx.length} page${idx.length>1?'s':''}.`;msg.className='ok'}
+  catch(e){msg.textContent=e.message;msg.className='err'}}}
+
+/* ---------- Registry & routing ---------- */
+const ICONS={compress:'<path d="M4 9h5V4M20 9h-5V4M4 15h5v5M20 15h-5v5"/>',resize:'<rect x="3" y="3" width="12" height="12" rx="1.5"/><path d="M15 21h6v-6M21 21l-8-8"/>',crop:'<path d="M6 2v14a2 2 0 0 0 2 2h14M2 6h14a2 2 0 0 1 2 2v14"/>',merge:'<rect x="3" y="3" width="10" height="13" rx="1.5"/><rect x="11" y="8" width="10" height="13" rx="1.5"/>',imgpdf:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.7"/><path d="m21 16-5-5-9 9"/>',split:'<rect x="4" y="3" width="7" height="18" rx="1.5"/><rect x="13" y="3" width="7" height="18" rx="1.5"/>',qr:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h3M20 17v4"/>',text:'<path d="M4 6h16M4 12h10M4 18h14"/>',case:'<path d="M3 18 8 6l5 12M5 14h6"/><path d="M15 18v-5a3 3 0 0 1 6 0v5M15 16h6"/>',scale:'<path d="M12 3v18M5 7h14"/><path d="M5 7 2 14a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/>',percent:'<path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/>',moon:'<path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/>'};
+const ic=n=>'<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">'+ICONS[n]+'</svg>';
+const CATS={image:'Image tools',pdf:'PDF tools',text:'Text tools',calc:'Calculators'};
+const TOOLS=[
+ {id:'image-compressor',n:'Image Compressor',c:'image',i:'compress',d:'Shrink JPEG, PNG and WebP files in your browser.',f:el=>imgTool(el,'compress'),rel:['image-resizer','qr-code-generator'],
+  info:'Compression trades file size for detail. Photos shrink well as JPEG or WebP at 60–80% quality; PNG is lossless so savings are smaller. Results depend on image content, format and settings.'},
+ {id:'image-resizer',n:'Image Resizer',c:'image',i:'resize',d:'Change image width and height with an aspect-ratio lock.',f:el=>imgTool(el,'resize'),rel:['image-compressor'],info:'Resize to meet upload requirements for forms and profiles. Keep the aspect ratio locked to avoid stretching. Enlarging an image cannot add detail.'},
+ {id:'image-cropper',n:'Image Cropper',c:'image',i:'crop',d:'Crop images to a custom area or ratio.',f:imgCrop,rel:['image-resizer','image-compressor'],info:'Drag the selection to move it, drag a corner to resize it, or focus it and use the arrow keys (Shift plus arrows resizes). Choose a ratio such as 1:1 or 16:9, or leave it freeform. Cropping happens on your device using the image’s full resolution, and photo orientation is respected.'},
+ {id:'pdf-merger',n:'PDF Merger',c:'pdf',i:'merge',d:'Combine several PDFs into one, in the order you choose.',f:pdfMerge,rel:['image-compressor'],info:'Add your PDFs, reorder them with the arrow buttons, then merge. Everything happens on your device.'},
+ {id:'images-to-pdf',n:'Images to PDF',c:'pdf',i:'imgpdf',d:'Turn images into a single PDF.',f:imgToPdf,rel:['pdf-merger','image-compressor'],info:'Add JPEG, PNG or WebP images, put them in the order you want, then pick a page size, orientation and margin. Each image is scaled to fit its page without stretching.'},
+ {id:'pdf-splitter',n:'PDF Splitter',c:'pdf',i:'split',d:'Extract pages or ranges from a PDF.',f:pdfSplit,rel:['pdf-merger','images-to-pdf'],info:'Type page numbers or ranges separated by commas, such as 1-3, 5, 8-10. The selected pages are saved as a new PDF in the order you list them.'},
+ {id:'qr-code-generator',n:'QR Code Generator',c:'text',i:'qr',d:'Create QR codes for text, links, email, Wi-Fi and contacts, with PNG or SVG download.',f:qrTool,rel:['word-counter'],info:'Codes are generated locally. Use high contrast, keep the quiet zone, and test with a phone before printing.'},
+ {id:'word-counter',n:'Word Counter',c:'text',i:'text',d:'Count words, characters, paragraphs and reading time.',f:wordCounter,rel:['case-converter'],info:'Words are runs of non-space characters. Characters are counted as Unicode characters. Paragraphs are blocks separated by blank lines.'},
+ {id:'case-converter',n:'Case Converter',c:'text',i:'case',d:'Switch text between upper, lower, title and sentence case.',f:caseConverter,rel:['word-counter']},
+ {id:'unit-converter',n:'Unit Converter',c:'calc',i:'scale',d:'Length, mass, temperature, area, volume, time and speed.',f:unitConv,rel:['percentage-calculator'],info:'Factors are exact SI definitions where possible. Temperature uses offsets (°F = °C × 9/5 + 32). Gallons, cups and fluid ounces are US units.'},
+ {id:'percentage-calculator',n:'Percentage Calculator',c:'calc',i:'percent',d:'Percent of a number, percent change and ratios.',f:pctCalc,rel:['unit-converter','age-calculator']},
+ {id:'age-calculator',n:'Age Calculator',c:'calc',i:'cal',d:'Exact age in years, months and days.',f:ageCalc,rel:['percentage-calculator'],info:'Age is calculated by calendar: full years, then months, then remaining days, with leap years and month lengths handled.'}
+].map(t=>({...t,ok:!!t.f}));
+const SITE={u:'enochexcellence62',d:'gmail.com'};/* address is kept in two parts and never printed on the page */
+function wireMail(){const m=$('#mailbtn'),c=$('#copybtn'),s=$('#mailmsg'),addr=()=>SITE.u+'@'+SITE.d;
+ m.onclick=()=>{window.open('mailto:'+addr()+'?subject='+encodeURIComponent('Render Tools feedback'),'_top');s.textContent='If your email app did not open, use “Copy email address” instead.'};
+ c.onclick=async()=>{try{await navigator.clipboard.writeText(addr());s.textContent='Email address copied to your clipboard.'}catch{s.textContent='Copying was blocked by your browser. Please use the email button.'}}}
+const UPD='Last updated: October 23, 2026.';
+const G=[
+{id:'guide-compress-images',t:'How to compress images without losing quality',d:'Pick the right format and quality setting so photos stay sharp and files get smaller.',tool:'image-compressor',html:`
+<p>Large images slow down pages, fill inboxes and break upload limits. The aim of compression is not the smallest possible file, it is the smallest file that still looks good for its purpose.</p>
+<h2>1. Choose the right format</h2>
+<ul><li><b>JPEG</b> suits photographs. It discards detail the eye barely notices.</li><li><b>WebP</b> usually produces smaller files than JPEG at similar quality and is supported by current browsers.</li><li><b>PNG</b> is lossless. It is best for logos, screenshots and graphics with sharp text, but photos saved as PNG stay large.</li></ul>
+<h2>2. Resize before you compress</h2>
+<p>A phone photo can be 4000 pixels wide, while most web pages show it at under 1600. Reducing the dimensions first with the <a href="#image-resizer">Image Resizer</a> often saves more than any quality setting.</p>
+<h2>3. Start around 75% quality</h2>
+<p>For JPEG and WebP, 70 to 85% is a sensible range. Compress, then compare the result with the original at full size. Look at faces, gradients such as skies, and text. If you see blocky patches or fuzzy edges, raise the quality a little.</p>
+<h2>4. Keep your original</h2>
+<p>Compression is not reversible. Work on a copy so you can start again if the result is not good enough.</p>
+<p>How much a file shrinks depends on the image content, its format and your settings, so results vary from picture to picture.</p>`},
+{id:'guide-merge-pdf',t:'How to merge PDF files into one document',d:'Combine several PDFs in the right order, and what to do when a file will not merge.',tool:'pdf-merger',html:`
+<p>Applications, reports and invoices often arrive as several separate PDFs. Merging them gives you one file that is easier to send and store.</p>
+<h2>Before you start</h2>
+<ul><li>Rename or note the order you want, for example cover page, main report, appendix.</li><li>Remove password protection from any file first. Encrypted PDFs cannot be merged by this tool.</li><li>Check sizes. A merged file is roughly the sum of its parts, and email services often cap attachments around 20 to 25 MB.</li></ul>
+<h2>Steps</h2>
+<ol><li>Open the <a href="#pdf-merger">PDF Merger</a> and add your files.</li><li>Use the Up and Down buttons to set the order. Remove any file added by mistake.</li><li>Select Merge PDFs and download the result.</li><li>Open the merged file and scroll through it to confirm every page is present and in order.</li></ol>
+<h2>If a file will not merge</h2>
+<p>The most common causes are encryption or a damaged file. Try opening the PDF in a viewer and printing it to a new PDF, which often produces a clean copy. To take only some pages from a long document first, use the <a href="#pdf-splitter">PDF Splitter</a>.</p>`},
+{id:'guide-qr-code',t:'How to create and test a QR code that scans reliably',d:'Choose the right content, keep strong contrast and always test before you print.',tool:'qr-code-generator',html:`
+<p>A QR code simply stores text, such as a web address, in a pattern a phone camera can read. Most scanning failures come from low contrast, small size or content that was typed wrongly.</p>
+<h2>Pick what to encode</h2>
+<ul><li><b>URL:</b> use the full address starting with https://.</li><li><b>Wi-Fi:</b> lets guests join a network without typing the password. Anyone who scans it can read the password, so only share it where that is acceptable.</li><li><b>Contact:</b> adds a name, phone, email or website to a phone's address book.</li></ul>
+<h2>Design for scanning</h2>
+<ul><li>Use a dark code on a light background. Inverted or low-contrast colors often fail.</li><li>Keep the blank border around the code, called the quiet zone.</li><li>Shorter content makes a simpler pattern that is easier to scan at small sizes.</li><li>Print at least about 2 cm (0.8 inch) wide, and larger if people will scan from a distance.</li></ul>
+<h2>Test before you print</h2>
+<p>Scan the code with at least one phone, check that it opens the right destination, and try a second device if you can. Only then print or publish it. Generate yours with the <a href="#qr-code-generator">QR Code Generator</a>.</p>`},
+{id:'guide-word-count',t:'How word and character counts work',d:'What counts as a word, how characters are measured and how reading time is estimated.',tool:'word-counter',html:`
+<p>Essays, social posts and forms often have limits, but different tools can show slightly different numbers. Knowing the rules explains why.</p>
+<h2>Words</h2>
+<p>This site counts a word as any run of characters separated by spaces or line breaks. So "well-known" counts as one word, and "e-mail me" counts as three. Some word processors treat punctuation or hyphens differently, which can cause small gaps.</p>
+<h2>Characters</h2>
+<p>Characters with spaces include every letter, digit, symbol, space and line break. Characters without spaces leave out all whitespace. Platforms with a limit, such as a text-message or bio field, usually count spaces, so check which figure they use.</p>
+<h2>Paragraphs</h2>
+<p>A paragraph is a block of text separated from the next by a blank line. A single line break inside a block does not start a new paragraph.</p>
+<h2>Reading time</h2>
+<p>Reading time is an estimate: the word count divided by 200 words per minute, rounded up. Adults read at different speeds, and technical text takes longer than light text, so treat it as a guide.</p>
+<p>Paste your text into the <a href="#word-counter">Word Counter</a> to see all of these figures update as you type. Your text stays in your browser.</p>`}
+];
+const PAGES={
+guides:{t:'Guides',d:'Practical guides for compressing images, merging PDFs, making QR codes and counting words.',html:`<p>Short, practical guides that explain how to get good results with the tools on this site.</p><div class="grid">${G.map(g=>`<a class="card" href="#${g.id}"><b>${g.t}</b><span>${g.d}</span></a>`).join('')}</div>`},
+contact:{t:'Contact',d:'How to contact Render Tools about feedback, bugs or privacy questions.',html:`<p>I would like to hear from you. Get in touch about bugs, tool ideas, feedback or privacy questions.</p><p><button type="button" class="btn" id="mailbtn">Send me an email</button> <button type="button" class="btn s" id="copybtn">Copy email address</button></p><p id="mailmsg" aria-live="polite"></p><p>When you report a problem, please tell me which tool you were using, your browser and what happened. Please do not send private files or personal documents by email.</p>`},
+terms:{t:'Terms of Service',d:'The terms for using Render Tools.',html:`<p>${UPD}</p><p>By using Render Tools you agree to these terms. If you do not agree, please do not use the site.</p>
+<h2>Use of the tools</h2><p>The tools are free to use for lawful personal and commercial purposes. Do not use them to process content you have no right to use, to break the law, or to disrupt the site or other people's use of it.</p>
+<h2>Your files and content</h2><p>You keep all rights to the files and text you process. The tools run in your browser and your files are not uploaded to the site. You are responsible for keeping backups of your originals.</p>
+<h2>No warranty</h2><p>The tools are provided "as is" and "as available", without warranties of any kind. Results such as compressed images, merged PDFs, generated QR codes and calculations are provided in good faith but may contain errors. Check important results before you rely on them. See the <a href="#disclaimer">Disclaimer</a>.</p>
+<h2>Limitation of liability</h2><p>To the extent permitted by law, the site owner is not liable for any loss or damage arising from your use of the site or its tools.</p>
+<h2>Intellectual property</h2><p>The Render Tools name, design and written content belong to the site owner. Open-source libraries used by the tools remain under their own licenses.</p>
+<h2>Changes and governing law</h2><p>These terms may be updated, and the date above will change when they are. The laws of the place where the site owner is established apply, subject to any consumer rights you have by law.</p><p>Questions? See the <a href="#contact">Contact</a> page.</p>`},
+disclaimer:{t:'Disclaimer',d:'Important notes about the accuracy and use of the results from Render Tools.',html:`<p>${UPD}</p>
+<h2>General information only</h2><p>Render Tools provides general-purpose utilities. Nothing on this site is legal, financial, medical, tax or other professional advice.</p>
+<h2>Accuracy of results</h2><p>Unit conversions, percentages and age calculations are done with standard formulas, but you should verify results used for anything important, such as official forms, contracts or measurements that affect safety.</p>
+<h2>Files and conversions</h2><p>Compressing or resizing an image permanently changes the new copy, and merging, splitting or converting PDFs may change layout in some viewers. Always keep your original files and review the output before you use or submit it.</p>
+<h2>QR codes</h2><p>Always scan a QR code with a phone and check the result before printing or sharing it. Do not rely on a QR code alone for safety-critical or payment purposes.</p>
+<h2>External links and libraries</h2><p>Some tools load open-source libraries from a content delivery network. The site owner is not responsible for third-party services.</p>`},
+cookies:{t:'Cookie Policy',d:'What Render Tools stores in your browser, and which third-party files it loads.',html:`<p>${UPD}</p>
+<h2>Cookies</h2><p>Render Tools does not set cookies of its own.</p>
+<h2>Local storage</h2><p>If you use the light and dark switch, your choice is saved in your browser's local storage under the name <code>rt-theme</code> so it is remembered on your next visit. Nothing else is stored, and nothing you enter into a tool is saved.</p>
+<h2>Third-party files</h2><p>The PDF and QR code tools use open-source libraries that your browser downloads from the jsDelivr content delivery network when the page loads. Like any web request, this lets that service and the site's host see technical details such as your IP address and browser type.</p>
+<h2>Analytics and advertising</h2><p>This site does not currently use analytics or advertising. If that changes, this policy, the <a href="#privacy">Privacy Policy</a> and a consent choice will be updated before any such technology is used.</p>`}
+};
+G.forEach(g=>{PAGES[g.id]={t:g.t,d:g.d,parent:['guides','Guides'],html:g.html+`<p><a class="btn" href="#${g.tool}">Open the ${TOOLS.find(x=>x.id===g.tool).n}</a></p>`}});
+const app=$('#main');let cleanup=[];
+function meta(t,d){document.title=t;let m=$('meta[name=description]');m.content=d}
+const card=t=>t.ok?`<a class="card" href="#${t.id}"><span class="ic" aria-hidden="true">${ic(t.i)}</span><b>${t.n}</b><span>${t.d}</span></a>`:`<div class="card soon"><span class="ic" aria-hidden="true">${ic(t.i)}</span><b>${t.n}<span class="tag">Coming soon</span></b><span>${t.d}</span></div>`;
+function list(q,c){const g=$('#grid');const r=TOOLS.filter(t=>(!c||t.c===c)&&(t.n+' '+t.d).toLowerCase().includes(q.toLowerCase()));g.innerHTML=r.map(card).join('')||'<p>No tools match your search.</p>'}
+function search(){return `<label class="sr" for="q">Search tools</label><input id="q" type="text" placeholder="Search tools, e.g. “compress image”" style="max-width:480px">`}
+function greet(){const h=new Date().getHours();return h>=5&&h<12?'Good morning':h>=12&&h<17?'Good afternoon':h>=17&&h<22?'Good evening':'Hello, night owl'}
+function route(){const h=location.hash.slice(1)||'home';const t=TOOLS.find(x=>x.id===h&&x.ok);window.scrollTo(0,0);
+ if(h==='home'){meta('Render Tools – Free Online Utilities','Free browser-based tools: image compressor, PDF merger, QR codes, word counter, unit converter and more.');
+  app.innerHTML=`<section class="hero"><p class="hello" id="hello"></p><h1>Everything you need. <span class="g">All in one place.</span></h1><p class="sub">Fast, private tools for images, PDFs, text and everyday calculations. Files are processed in your browser.</p>${search()}<p class="chips" style="margin-top:14px">${TOOLS.filter(x=>x.ok).slice(0,5).map(x=>`<a class="btn s" href="#${x.id}">${x.n}</a>`).join(' ')}</p></section><h2>Popular tools</h2><div class="grid" id="grid"></div>`;
+  list('');$('#hello').textContent=greet();$('#q').oninput=e=>list(e.target.value);}
+ else if(h==='tools'){meta('All Tools – Render Tools','Browse every Render Tools utility by category.');let c='';
+  app.innerHTML=`<p class="crumb"><a href="#home">Home</a> › All tools</p><h1>All tools</h1>${search()}<p class="chips" style="margin-top:12px" id="ch"><button class="btn on">All</button>${Object.entries(CATS).map(([k,v])=>`<button class="btn s" data-c="${k}">${v}</button>`).join('')}</p><div class="grid" id="grid"></div>`;
+  list('');$('#q').oninput=e=>list(e.target.value,c);$$('#ch button').forEach(b=>b.onclick=()=>{c=b.dataset.c||'';$$('#ch button').forEach(x=>x.className='btn s');b.className='btn on';list($('#q').value,c)})}
+ else if(h==='privacy'||h==='about'){const P=h==='privacy';meta((P?'Privacy & Cookies':'About')+' – Render Tools',P?'How Render Tools handles your files and data.':'About Render Tools.');
+  app.innerHTML=`<p class="crumb"><a href="#home">Home</a> › ${P?'Privacy &amp; cookies':'About'}</p><h1>${P?'Privacy &amp; cookies':'About'}</h1>`+(P?
+  `<p>All tools in this version run entirely in your browser. Images, PDFs and text you enter are not uploaded to any server.</p><p>This site sets no cookies and has no analytics or advertising. It saves only your light or dark mode choice in your browser, and the PDF and QR tools load open-source libraries from the jsDelivr CDN, which can see your IP address when you load the page. See the <a href="#cookies">Cookie Policy</a> for details. If analytics or Google AdSense are added later, this policy and a consent prompt will be updated first.</p><p>For privacy questions, or to ask about the information described on this page, please use the <a href="#contact">Contact</a> page.</p>`:
+  `<h2>Hey, I’m Enoch</h2><p>I’ve always been curious about technology and the little things that can make everyday tasks easier. As an IT student, I spend a lot of time learning, experimenting, trying out different ideas, and sometimes asking myself, “There has to be a simpler way to do this.”</p><p>That mindset is actually part of what led me to create Render Tools. I wanted to build a place where I could put together simple, useful tools that people can use without having to deal with unnecessary complications.</p><p>This website is also a reflection of my own journey. I’m learning as I build, improving things along the way, and adding tools based on the kinds of problems I come across myself.</p><p>So whether you’re here to quickly convert a file, work with a PDF, create a QR code, format some text, or just explore what’s available, I hope Render Tools saves you some time and makes things a little easier.</p><p>Thanks for stopping by — I’m glad you’re here.</p>`);}
+ else if(PAGES[h]){const q=PAGES[h];meta(q.t+' – Render Tools',q.d);
+  app.innerHTML=`<p class="crumb"><a href="#home">Home</a> › ${q.parent?`<a href="#${q.parent[0]}">${q.parent[1]}</a> › `:''}${q.t}</p><h1>${q.t}</h1>${q.html}`;
+  if(h==='contact')wireMail()}
+ else if(t){meta(t.n+' – Free Online Tool | Render Tools',t.d);
+  app.innerHTML=`<p class="crumb"><a href="#home">Home</a> › <a href="#tools">All tools</a> › ${t.n}</p><h1>${t.n}</h1><p class="sub" style="text-align:left;margin-bottom:8px">${t.d} Runs in your browser; nothing is uploaded.</p><div class="panel" id="tool"></div>
+  ${t.info?`<h2>About this tool</h2><p>${t.info}</p>`:''}${t.rel?`<h2>Related tools</h2><div class="grid">${t.rel.map(r=>card(TOOLS.find(x=>x.id===r))).join('')}</div>`:''}`;
+  t.f($('#tool'));}
+ else{meta('Page not found – Render Tools','This page does not exist.');app.innerHTML=`<section class="hero"><h1>Page not found</h1><p class="sub">That tool or page isn’t available yet.</p><a class="btn" href="#tools">Browse all tools</a></section>`}
+ $('#yr').textContent='© '+new Date().getFullYear()+' Render Tools. Everyday Tools. Rendered Simple.';}
+const th=$('#th'),mq=matchMedia('(prefers-color-scheme:dark)'),root=document.documentElement;
+const cur=()=>root.dataset.theme||(mq.matches?'dark':'light');
+const paint=()=>{const d=cur()==='dark';th.innerHTML=ic(d?'sun':'moon')+(d?' Light':' Dark');th.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')};
+try{const s=localStorage.getItem('rt-theme');if(s==='dark'||s==='light')root.dataset.theme=s}catch{}
+th.onclick=()=>{const n=cur()==='dark'?'light':'dark';root.dataset.theme=n;try{localStorage.setItem('rt-theme',n)}catch{}paint();say(n+' mode on')};
+mq.onchange=paint;paint();
+$('a.sr').onclick=e=>{e.preventDefault();app.focus()};
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
